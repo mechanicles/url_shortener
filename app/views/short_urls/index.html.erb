@@ -1,0 +1,10 @@
+Simplify your links:
+
+<br />
+<br />
+
+<%= form_for @short_url do |f| %>
+  <%= f.label "Your original URL here" %>
+  <%= f.text_field :original_url %>
+  <%= f.submit "Shorten URL" %>
+<% end %>
