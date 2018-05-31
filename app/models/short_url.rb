@@ -10,6 +10,10 @@ class ShortUrl < ApplicationRecord
 
   before_save :create_short_url
 
+  def to_original_url
+    original_url
+  end
+
   private
 
     def create_short_url

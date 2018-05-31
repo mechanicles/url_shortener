@@ -15,6 +15,18 @@ class ShortUrlsController < ApplicationController
     end
   end
 
+  def redirect_to_original_url
+    short_url_token = params[:short_url]
+    short_url = ShortUrl.find_by(short_url: short_url_token)
+
+    if short_url.present?
+      redirect_to short_url.to_original_url
+    else
+      flash[:error] = "Not able to find out original URL for given '#{root_url}#{short_url_token}' URL"
+      redirect_to root_path
+    end
+  end
+
   private
 
   def short_url_params

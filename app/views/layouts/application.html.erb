@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <h1>URL Shortener</h1>
+    <hr>
+    <% flash.each do |_, value| %>
+      <span style="color:red">
+        <%= value %>
+      </span>
+      <br></br>
+    <% end %>
     <%= yield %>
   </body>
 </html>
