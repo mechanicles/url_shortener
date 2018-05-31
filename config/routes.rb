@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   root "short_urls#index"
 
-  resources :short_urls, only: :index
+  resources :short_urls, only: [:index, :create]
 
 end

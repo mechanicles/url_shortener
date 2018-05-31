@@ -1,10 +1,26 @@
 Simplify your links:
 
 <br />
-<br />
+
+<% @short_url.errors.full_messages.each do |message| %>
+  <span style="color:red"><%= message %></span>
+<% end %>
 
 <%= form_for @short_url do |f| %>
   <%= f.label "Your original URL here" %>
   <%= f.text_field :original_url %>
   <%= f.submit "Shorten URL" %>
 <% end %>
+
+<hr>
+
+<table>
+  <tr>
+    <th>Original URL</th><th> Short URL</th>
+  </tr>
+  <% @short_urls.each do |short_url| %>
+    <tr>
+      <td><%= short_url.original_url %></td> <td><%= "#{root_url}#{short_url.short_url}"%></td>
+    </tr>
+  <% end %>
+</table>
