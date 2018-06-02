@@ -1,9 +1,9 @@
-# Install apt based dependencies required to run Rails as
-# well as RubyGems. As the Ruby image itself is based on a
-# Debian image, we use apt-get to install those.
 FROM ruby:2.5
 MAINTAINER santosh.wadghule@gmail.com
 
+# Install apt based dependencies required to run Rails as
+# well as RubyGems. As the Ruby image itself is based on a
+# Debian image, we use apt-get to install those.
 RUN apt-get update && apt-get install -y \
   build-essential \
   nodejs
