@@ -1,24 +1,15 @@
-# README
+# URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Please note that I have used Rails' system test using RSpec.**
+**You can find that spec in spec folder i.e., spec/system/url_shortener_spec.rb**
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+- docker-compose build
+- docker-compose up
+- docker-compose run app rake db:create
+- docker-compose run app rake db:migrate
 
-* System dependencies
+## Run specs
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- docker-compose run app rspec spec/system/url_shortener_spec.rb
