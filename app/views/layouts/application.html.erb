@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UrlShortener</title>
+    <title>URL Shortener</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -16,8 +15,10 @@
       <span style="color:red">
         <%= value %>
       </span>
-      <br></br>
     <% end %>
     <%= yield %>
+    <div id="footer">
+      <%= link_to "Santosh Wadghule", "http://mechanicles.com", target: "_blank" %> ❘ Made URL Shortener with <span>❤</span>
+    </div>
   </body>
 </html>

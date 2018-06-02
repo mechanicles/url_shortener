@@ -1,25 +1,26 @@
-<% @short_url.errors.full_messages.each do |message| %>
-  <span style="color:red"><%= message %></span>
+<% @short_url.errors.each do |_, message| %>
+  <span style="color:red">URL <%= message %></span>
 <% end %>
 
 <%= form_for @short_url do |f| %>
   <%= f.text_field :original_url, placeholder: "Your original URL here" %>
-  <%= f.submit "Shorten URL" %>
+  <%= f.submit "SHORTEN URL" %>
 <% end %>
 
 <br />
 
 <table>
   <tr>
-    <th>Original URL</th><th> Short URL</th>
+    <th>Original URL</th>
+    <th>Short URL</th>
   </tr>
   <% @short_urls.each do |short_url| %>
     <tr>
       <td>
-        <%= link_to short_url.original_url, short_url.original_url %>
+        <%= link_to short_url.original_url, short_url.original_url, target: '_blank' %>
       </td>
       <td>
-        <%= link_to "#{root_url}#{short_url.short_url}", "#{root_url}#{short_url.short_url}" %>
+        <%= link_to "#{root_url}#{short_url.short_url_token}", "#{root_url}#{short_url.short_url_token}", target: '_blank' %>
       </td>
     </tr>
   <% end %>
